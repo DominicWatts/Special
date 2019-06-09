@@ -1,0 +1,23 @@
+{
+    "name": "dominicwatts/special",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Dominic Xigen",
+            "email": "dominic@xigen.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Xigen\\Special\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
