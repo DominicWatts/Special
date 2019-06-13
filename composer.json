@@ -1,9 +1,9 @@
 {
     "name": "dominicwatts/special",
-    "description": "",
+    "description": "Special offers landing page with layered navigation",
     "type": "magento2-module",
     "license": "proprietary",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Dominic Xigen",
