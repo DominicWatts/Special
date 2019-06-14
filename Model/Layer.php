@@ -39,7 +39,6 @@ class Layer extends \Magento\Catalog\Model\Layer
         if (isset($this->_productCollections['xigen_custom'])) {
             $collection = $this->_productCollections['xigen_custom'];
         } else {
-            //here you assign your own custom collection of products
             $collection = $this->productCollectionFactory->create();
 
             $date = new \Zend_Date();
