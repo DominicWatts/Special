@@ -1,4 +1,4 @@
-# Magento 2 Special Offers Page ##
+# Magento 2 Special Offers Page #
 
 Frontend controller to display products with special offers with layered navigation.
 
