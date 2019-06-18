@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-	<body>
+    <body>
         <attribute name="class" value="page-products"/>
         <referenceBlock name="breadcrumbs">
             <action method="addCrumb">
@@ -19,11 +19,11 @@
                 </argument>
             </action>
         </referenceBlock>
-		<referenceBlock name="page.main.title">
-			<action method="setPageTitle">
-				<argument translate="true" name="title" xsi:type="string">Special Offers</argument>
-			</action>
-		</referenceBlock>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Special Offers</argument>
+            </action>
+        </referenceBlock>
         <referenceContainer name="content">
             <block class="Xigen\Special\Block\Product\ListProduct" name="layerednavigation_index_index" as="product_list" template="Magento_Catalog::product/list.phtml">
                 <container name="category.product.list.additional" as="additional" />
