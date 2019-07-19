@@ -1,4 +1,5 @@
 <?php
+
 namespace Xigen\Special\Block;
 
 /**
@@ -6,6 +7,14 @@ namespace Xigen\Special\Block;
  */
 class Navigation extends \Magento\LayeredNavigation\Block\Navigation
 {
+    /**
+     * Navigation constructor.
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Xigen\Special\Model\Layer\Resolver $layerResolver
+     * @param \Magento\Catalog\Model\Layer\FilterList $filterList
+     * @param \Magento\Catalog\Model\Layer\AvailabilityFlagInterface $visibilityFlag
+     * @param array $data
+     */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Xigen\Special\Model\Layer\Resolver $layerResolver,

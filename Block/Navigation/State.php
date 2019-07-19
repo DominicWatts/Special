@@ -1,4 +1,5 @@
 <?php
+
 namespace Xigen\Special\Block\Navigation;
 
 /**
@@ -6,6 +7,12 @@ namespace Xigen\Special\Block\Navigation;
  */
 class State extends \Magento\LayeredNavigation\Block\Navigation\State
 {
+    /**
+     * State constructor.
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Xigen\Special\Model\Layer\Resolver $layerResolver
+     * @param array $data
+     */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Xigen\Special\Model\Layer\Resolver $layerResolver,
