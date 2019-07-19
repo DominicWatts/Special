@@ -1,4 +1,5 @@
 <?php
+
 namespace Xigen\Special\Model;
 
 use Magento\Catalog\Api\CategoryRepositoryInterface;
@@ -10,6 +11,23 @@ use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
  */
 class Layer extends \Magento\Catalog\Model\Layer
 {
+    /**
+     * @var CollectionFactory
+     */
+    protected $productCollectionFactory;
+
+    /**
+     * Layer constructor.
+     * @param \Magento\Catalog\Model\Layer\ContextInterface $context
+     * @param \Magento\Catalog\Model\Layer\StateFactory $layerStateFactory
+     * @param AttributeCollectionFactory $attributeCollectionFactory
+     * @param \Magento\Catalog\Model\ResourceModel\Product $catalogProduct
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
+     * @param \Magento\Framework\Registry $registry
+     * @param CategoryRepositoryInterface $categoryRepository
+     * @param CollectionFactory $productCollectionFactory
+     * @param array $data
+     */
     public function __construct(
         \Magento\Catalog\Model\Layer\ContextInterface $context,
         \Magento\Catalog\Model\Layer\StateFactory $layerStateFactory,
@@ -34,6 +52,11 @@ class Layer extends \Magento\Catalog\Model\Layer
         );
     }
 
+    /**
+     * Get special product collection
+     * @return \Magento\Catalog\Model\ResourceModel\Product\Collection
+     * @throws \Zend_Date_Exception
+     */
     public function getProductCollection()
     {
         if (isset($this->_productCollections['xigen_custom'])) {
@@ -49,7 +72,8 @@ class Layer extends \Magento\Catalog\Model\Layer
                     'or' => [
                         0 => [
                             'date' => true,
-                            'to' => $date->get('YYYY-MM-dd').' 23:59:59'],
+                            'to' => $date->get('YYYY-MM-dd') . ' 23:59:59'
+                        ],
                         1 => [
                             'is' => new \Zend_Db_Expr('null')
                         ],
@@ -64,7 +88,8 @@ class Layer extends \Magento\Catalog\Model\Layer
                     'or' => [
                         0 => [
                             'date' => true,
-                            'from' =>  $date->get('YYYY-MM-dd').' 00:00:00'],
+                            'from' => $date->get('YYYY-MM-dd') . ' 00:00:00'
+                        ],
                         1 => [
                             'is' => new \Zend_Db_Expr('null')
                         ],

@@ -18,6 +18,6 @@ For products to display they must be on special offer and with the special from 
 
 Apply special offers to products
 
-Go to `/specials`
+Go to `/special-offers` or use header link
 
 
