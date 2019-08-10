@@ -3,7 +3,7 @@
     "description": "Special offers landing page with layered navigation",
     "type": "magento2-module",
     "license": "proprietary",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "authors": [
         {
             "name": "Dominic Xigen",
@@ -11,10 +11,18 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "require": {
+        "magento/framework": "*"
+    },
     "autoload": {
         "psr-4": {
-            "Xigen\\Special\\": ""
+            "Xigen\\LogCleaner\\": ""
         },
         "files": [
             "registration.php"
