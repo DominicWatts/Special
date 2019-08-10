@@ -8,6 +8,13 @@ namespace Xigen\Special\Block\Navigation;
 class State extends \Magento\LayeredNavigation\Block\Navigation\State
 {
     /**
+     * Catalog layer
+     *
+     * @var \Magento\Catalog\Model\Layer
+     */
+    protected $_catalogLayer;
+
+    /**
      * State constructor.
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Xigen\Special\Model\Layer\Resolver $layerResolver
@@ -18,6 +25,7 @@ class State extends \Magento\LayeredNavigation\Block\Navigation\State
         \Xigen\Special\Model\Layer\Resolver $layerResolver,
         array $data = []
     ) {
+        $this->_catalogLayer = $layerResolver->get();
         parent::__construct($context, $layerResolver, $data);
     }
 }
