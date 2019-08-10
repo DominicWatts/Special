@@ -8,6 +8,28 @@ namespace Xigen\Special\Block\Product;
 class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
 {
     /**
+     * Catalog layer
+     *
+     * @var Layer
+     */
+    protected $_catalogLayer;
+
+    /**
+     * @var PostHelper
+     */
+    protected $_postDataHelper;
+
+    /**
+     * @var Data
+     */
+    protected $urlHelper;
+
+    /**
+     * @var CategoryRepositoryInterface
+     */
+    protected $categoryRepository;
+
+    /**
      * ListProduct constructor.
      * @param \Magento\Catalog\Block\Product\Context $context
      * @param \Magento\Framework\Data\Helper\PostHelper $postDataHelper
@@ -24,6 +46,10 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
         \Magento\Framework\Url\Helper\Data $urlHelper,
         array $data = []
     ) {
+        $this->_catalogLayer = $layerResolver->get();
+        $this->_postDataHelper = $postDataHelper;
+        $this->categoryRepository = $categoryRepository;
+        $this->urlHelper = $urlHelper;
         parent::__construct(
             $context,
             $postDataHelper,
