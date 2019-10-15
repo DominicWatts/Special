@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Xigen\Special\Block\Widget\Special" id="xigen_special_special">
+        <label>Special Products List</label>
+        <description>List of products that are set as special Products</description>
+        <parameters>
+            <parameter name="show_pager" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display Page Control</label>
+            </parameter>
+            <parameter name="products_per_page" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products per Page</label>
+                <depends>
+                    <parameter name="show_pager" value="1"/>
+                </depends>
+                <value>5</value>
+            </parameter>
+            <parameter name="products_count" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products to Display</label>
+                <value>10</value>
+            </parameter>
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="product/widget/special/content/special_grid.phtml" selected="true">
+                        <label translate="true">Special Products Grid Template</label>
+                    </option>
+                    <option name="list" value="product/widget/special/content/special_list.phtml">
+                        <label translate="true">Special Products List Template</label>
+                    </option>
+                    <option name="list_default"
+                            value="product/widget/special/column/special_default_list.phtml">
+                        <label translate="true">Special Products Images and Names Template</label>
+                    </option>
+                    <option name="list_names"
+                            value="product/widget/special/column/special_names_list.phtml">
+                        <label translate="true">Special Products Names Only Template</label>
+                    </option>
+                    <option name="list_images"
+                            value="product/widget/special/column/special_images_list.phtml">
+                        <label translate="true">Special Products Images Only Template</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="cache_lifetime" xsi:type="text" visible="true">
+                <label translate="true">Cache Lifetime (Seconds)</label>
+                <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+            </parameter>
+        </parameters>
+        <containers>
+            <container name="sidebar.main">
+                <template name="default" value="list_default"/>
+                <template name="names_only" value="list_names"/>
+                <template name="images_only" value="list_images"/>
+            </container>
+            <container name="content">
+                <template name="grid" value="default"/>
+                <template name="list" value="list"/>
+            </container>
+            <container name="sidebar.additional">
+                <template name="default" value="list_default"/>
+                <template name="names_only" value="list_names"/>
+                <template name="images_only" value="list_images"/>
+            </container>
+        </containers>
+    </widget>
+</widgets>
