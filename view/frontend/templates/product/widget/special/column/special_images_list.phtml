@@ -20,7 +20,7 @@
                         <a class="product-item-photo" href="<?= /* @escapeNotVerified */ $_product->getProductUrl() ?>"
                            title="<?= /* @escapeNotVerified */ $block->stripTags($_product->getName(), null, true) ?>">
                             <?php /* special_products_images_only_widget */ ?>
-                            <?= $block->getImage($_product, 'special_products_images_only_widget')->toHtml() ?>
+                            <?= $block->getImage($_product, 'new_products_images_only_widget')->toHtml() ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
