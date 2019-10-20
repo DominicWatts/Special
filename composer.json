@@ -1,6 +1,6 @@
 {
     "name": "dominicwatts/special",
-    "description": "Special offers landing page with layered navigation",
+    "description": "Special offers landing page with layered navigation and widget",
     "type": "magento2-module",
     "license": "proprietary",
     "version": "1.1.4",
