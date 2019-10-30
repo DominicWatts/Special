@@ -1,0 +1,7 @@
+image: domw/phpcs
+
+phpcs:
+  script:
+    - phpcs --version
+    - phpcs -i
+    - phpcs --colors --standard=Magento2 --report=full,summary,gitblame /builds/DominicWatts/special/
