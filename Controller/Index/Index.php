@@ -28,7 +28,9 @@ class Index extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $resultPage = $this->pageFactory->create();
-        $resultPage->getConfig()->getTitle()->set('Special Offers');
+        $resultPage->getConfig()
+            ->getTitle()
+            ->set(__('Special Offers'));
         return $resultPage;
     }
 }
