@@ -7,7 +7,7 @@ use Magento\Catalog\Model\ResourceModel\Product\Attribute\CollectionFactory as A
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 
 /**
- * Layer class
+ * Xigen Special Layer model class
  */
 class Layer extends \Magento\Catalog\Model\Layer
 {

@@ -22,9 +22,13 @@ class Index extends \Magento\Framework\App\Action\Action
         \Magento\Framework\View\Result\PageFactory $pageFactory
     ) {
         $this->pageFactory = $pageFactory;
-        return parent::__construct($context);
+        parent::__construct($context);
     }
 
+    /**
+     * Execute view action
+     * @return \Magento\Framework\Controller\ResultInterface
+     */
     public function execute()
     {
         $resultPage = $this->pageFactory->create();

@@ -4,9 +4,9 @@
  * See COPYING.txt for license details.
  */
 
-// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+// phpcs:disable Magento2.Templates.ThisInTemplate
 ?>
-<?php if (($_products = $block->getProductCollection()) && $_products->getSize()) : ?>
+<?php if (($_products = $block->getProductCollection()) && $_products->getSize()): ?>
     <div class="block widget block-special-products-names">
         <div class="block-title">
             <strong><?= $block->escapeHtml(__('Special Offers')) ?></strong>
@@ -15,7 +15,7 @@
             <?php $suffix = $block->getNameInLayout(); ?>
             <ol id="widget-special-products-<?= $block->escapeHtmlAttr($suffix) ?>" 
                 class="product-items product-items-names">
-                <?php foreach ($_products->getItems() as $_product) : ?>
+                <?php foreach ($_products->getItems() as $_product): ?>
                     <li class="product-item">
                         <strong class="product-item-name">
                             <a href="<?= $block->escapeUrl($_product->getProductUrl()) ?>"

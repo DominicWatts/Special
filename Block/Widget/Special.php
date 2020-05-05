@@ -3,7 +3,7 @@
 namespace Xigen\Special\Block\Widget;
 
 /**
- * Special Widget class
+ * Xigen Special Widget block class
  */
 class Special extends \Magento\Catalog\Block\Product\NewProduct implements \Magento\Widget\Block\BlockInterface
 {
@@ -19,7 +19,6 @@ class Special extends \Magento\Catalog\Block\Product\NewProduct implements \Mage
 
     /**
      * Name of request parameter for page number value
-     * @deprecated
      */
     const PAGE_VAR_NAME = 'fp';
 
