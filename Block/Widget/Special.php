@@ -116,7 +116,7 @@ class Special extends \Magento\Catalog\Block\Product\NewProduct implements \Mage
             )
             ->addAttributeToFilter('special_price', ['gt' => '0.1'])
             ->addAttributeToFilter('price', ['gt' => '0.1'])
-            ->addAttributeToFilter('special_price', ['lt' => new \Zend_Db_Expr('at_price.value')])
+            // ->addAttributeToFilter('special_price', ['lt' => new \Zend_Db_Expr('at_price.value')])
             ->addAttributeToSort('created_at', 'desc')
             ->setPageSize($this->getPageSize())
             ->setCurPage($this->getCurrentPage());
