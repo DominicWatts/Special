@@ -100,7 +100,7 @@ class Layer extends \Magento\Catalog\Model\Layer
 
             $collection->addAttributeToFilter('special_price', ['gt' => '0.1']);
             $collection->addAttributeToFilter('price', ['gt' => '0.1']);
-            $collection->addAttributeToFilter('special_price', ['lt' => new \Zend_Db_Expr('at_price.value')]);
+            // $collection->addAttributeToFilter('special_price', ['lt' => new \Zend_Db_Expr('at_price.value')]);
 
             $this->prepareProductCollection($collection);
             $this->_productCollections['xigen_custom'] = $collection;
