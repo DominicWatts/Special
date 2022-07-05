@@ -19,7 +19,7 @@
     ],
     "require": {
         "magento/framework": "*",
-        "php": "~7.0.0||~7.1.0||~7.2.0||~7.3.0",
+        "php": ">=7.1.0",
         "magento/module-layered-navigation": "*",
         "magento/module-catalog": "*"
     },
