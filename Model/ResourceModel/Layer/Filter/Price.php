@@ -6,10 +6,6 @@ use Magento\Framework\App\Http\Context;
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\Indexer\DimensionFactory;
 use Magento\Framework\Search\Request\IndexScopeResolverInterface;
-use Magento\Store\Model\StoreManagerInterface;
-use Magento\Customer\Model\Context as CustomerContext;
-use Magento\Customer\Model\Indexer\CustomerGroupDimensionProvider;
-use Magento\Store\Model\Indexer\WebsiteDimensionProvider;
 
 /**
  * Price Filter

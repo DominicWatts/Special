@@ -18,7 +18,7 @@ class Resolver extends \Magento\Catalog\Model\Layer\Resolver
      * @var array
      */
     protected $layersPool;
-    
+
     /**
      * Resolver constructor.
      * @param \Magento\Framework\ObjectManagerInterface $objectManager

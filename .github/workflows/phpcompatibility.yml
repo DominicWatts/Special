@@ -1,9 +1,10 @@
-name: PHPCompatibility
-on: [push]
+name: PHP Compatibility
+on: [push, pull_request]
+
 jobs:
-  build:
+  static:
+    name: PHP Compatibility
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: 7.0-7.3
-      run: docker run --rm -v $PWD:/code domw/phpcompatibility phpcs --standard=PHPCompatibility --runtime-set testVersion 7.0-7.3 --colors --warning-severity=0 --report=full,summary --extensions=php,phtml ./
+      - uses: actions/checkout@v2
+      - uses: extdn/github-actions-m2/php-compatibility/7.4@master
