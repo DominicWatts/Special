@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <update handle="catalog_category_view_type_layered" />
         <attribute name="class" value="page-products"/>
         <referenceBlock name="breadcrumbs">
             <action method="addCrumb">
@@ -26,6 +27,9 @@
         </referenceBlock>
         <referenceContainer name="content">
             <block class="Xigen\Special\Block\Product\ListProduct" name="layerednavigation_index_index" as="product_list" template="Magento_Catalog::product/list.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\OptionsData</argument>
+                </arguments>
                 <container name="category.product.list.additional" as="additional" />
                 <block class="Magento\Framework\View\Element\RendererList" name="category.product.type.details.renderers" as="details.renderers">
                     <block class="Magento\Framework\View\Element\Template" name="category.product.type.details.renderers.default" as="default"/>
@@ -46,7 +50,11 @@
         <referenceContainer name="sidebar.main">
             <block class="Xigen\Special\Block\Navigation" name="catalog.leftnav" as="navigation" before="-" template="Magento_LayeredNavigation::layer/view.phtml">
                 <block class="Xigen\Special\Block\Navigation\State" name="catalog.navigation.state" as="state" template="Magento_LayeredNavigation::layer/state.phtml" />
-                <block class="Magento\LayeredNavigation\Block\Navigation\FilterRenderer" name="catalog.navigation.renderer" as="renderer" template="Magento_LayeredNavigation::layer/filter.phtml"/>
+                <block class="Magento\LayeredNavigation\Block\Navigation\FilterRenderer" name="catalog.navigation.renderer" as="renderer" template="Magento_LayeredNavigation::layer/filter.phtml">
+                    <arguments>
+                        <argument name="product_layer_view_model" xsi:type="object">Magento\LayeredNavigation\ViewModel\Layer\Filter</argument>
+                    </arguments>
+                </block>
             </block>
         </referenceContainer>
     </body>
