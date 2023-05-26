@@ -64,7 +64,7 @@ class Layer extends \Magento\Catalog\Model\Layer
         } else {
             $collection = $this->productCollectionFactory->create();
 
-            $date = new \Zend_Date();
+            $date = new \DateTime();
 
             $collection->addAttributeToFilter(
                 'special_from_date',
@@ -72,7 +72,7 @@ class Layer extends \Magento\Catalog\Model\Layer
                     'or' => [
                         0 => [
                             'date' => true,
-                            'to' => $date->get('YYYY-MM-dd') . ' 23:59:59'
+                            'to' => $date->format('Y-m-d') . ' 23:59:59'
                         ],
                         1 => [
                             'is' => new \Zend_Db_Expr('null')
@@ -88,7 +88,7 @@ class Layer extends \Magento\Catalog\Model\Layer
                     'or' => [
                         0 => [
                             'date' => true,
-                            'from' => $date->get('YYYY-MM-dd') . ' 00:00:00'
+                            'from' => $date->format('Y-m-d') . ' 00:00:00'
                         ],
                         1 => [
                             'is' => new \Zend_Db_Expr('null')
