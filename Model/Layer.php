@@ -55,7 +55,6 @@ class Layer extends \Magento\Catalog\Model\Layer
     /**
      * Get special product collection
      * @return \Magento\Catalog\Model\ResourceModel\Product\Collection
-     * @throws \Zend_Date_Exception
      */
     public function getProductCollection()
     {
