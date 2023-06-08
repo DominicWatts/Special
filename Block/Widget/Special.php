@@ -80,7 +80,7 @@ class Special extends \Magento\Catalog\Block\Product\NewProduct implements \Mage
         $collection = $this->_productCollectionFactory->create();
         $collection->setVisibility($this->_catalogProductVisibility->getVisibleInCatalogIds());
         $collection->getSelect()->orderRand();
-        $date = new \Zend_Date();
+        $date = new \DateTime();
 
         $collection = $this->_addProductAttributesAndPrices($collection)
             ->addStoreFilter()
@@ -90,7 +90,7 @@ class Special extends \Magento\Catalog\Block\Product\NewProduct implements \Mage
                     'or' => [
                         0 => [
                             'date' => true,
-                            'to' => $date->get('YYYY-MM-dd') . ' 23:59:59'
+                            'to' => $date->format('Y-m-d') . ' 23:59:59'
                         ],
                         1 => [
                             'is' => new \Zend_Db_Expr('null')
@@ -105,7 +105,7 @@ class Special extends \Magento\Catalog\Block\Product\NewProduct implements \Mage
                     'or' => [
                         0 => [
                             'date' => true,
-                            'from' => $date->get('YYYY-MM-dd') . ' 00:00:00'
+                            'from' => $date->format('Y-m-d') . ' 00:00:00'
                         ],
                         1 => [
                             'is' => new \Zend_Db_Expr('null')
